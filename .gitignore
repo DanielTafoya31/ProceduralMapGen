@@ -1,0 +1,221 @@
+# =============================================================================
+# .gitignore - ProceduralMapGenerator (Plugin UE5)
+# =============================================================================
+# Este archivo ignora todo lo que UE5, los IDEs y el SO generan automaticamente.
+# Solo versiona: codigo fuente, archivos de configuracion del plugin, y
+# assets de ejemplo INTENCIONALES (si los hay).
+# =============================================================================
+
+
+# =============================================================================
+# 1. ARCHIVOS GENERADOS POR UNREAL ENGINE
+# =============================================================================
+
+# Binarios compilados (nunca versionar)
+Binaries/
+Build/
+Intermediate/
+DerivedDataCache/
+
+# Archivos de solucion y proyecto generados por UE
+*.sln
+*.slnx
+*.xcodeproj
+*.xcworkspace
+
+# Archivos de usuario de UE (preferencias locales)
+# Nota: Git no aplica excepciones (!) dentro de una carpeta ya ignorada,
+# por eso Saved/Config/ no se puede "rescatar" simplemente negando Saved/.
+Saved/
+# !Saved/Config/WindowsEditor/EditorPerProjectUserSettings.ini
+
+# Cache de shaders compilados
+*.ushaderbytecode
+*.ushaderpipelinecache
+
+# Logs
+*.log
+Logs/
+
+# Archivos de crash y debugging
+*.dmp
+*.runtime-xml
+
+# Archivos de cache de asset registry
+AssetRegistry.bin
+
+# Archivos de cache de navegacion (reconstruibles)
+*.BuiltData.uasset
+
+# Archivos temporales de importacion
+__ExternalObjects__/
+__ExternalActors__/
+
+
+# =============================================================================
+# 2. ARCHIVOS GENERADOS POR IDEs
+# =============================================================================
+
+# Visual Studio
+.vs/
+*.vcxproj
+*.vcxproj.filters
+*.vcxproj.user
+*.suo
+*.user
+*.userosscache
+*.sdf
+*.opensdf
+*.VC.db
+*.VC.opendb
+ipch/
+
+# Visual Studio Code
+.vscode/
+*.code-workspace
+
+# JetBrains Rider
+.idea/
+*.sln.iml
+
+# CLion
+.cmake/
+cmake-build-*/
+
+# Xcode
+*.mode1v3
+*.mode2v3
+*.perspectivev3
+*.pbxuser
+*.xcuserstate
+project.xcworkspace/
+xcuserdata/
+
+
+# =============================================================================
+# 3. ARCHIVOS DEL SISTEMA OPERATIVO
+# =============================================================================
+
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+*.stackdump
+[Dd]esktop.ini
+$RECYCLE.BIN/
+*.lnk
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+.Spotlight-V100
+.Trashes
+
+# Linux
+*~
+.nfs*
+.directory
+.Trash-*
+
+
+# =============================================================================
+# 4. ARCHIVOS DE CONTROL DE VERSIONES Y DEPENDENCIAS
+# =============================================================================
+
+# Git
+*.orig
+*.rej
+
+# Submodulos de terceros (si los tuvieras y no quisieras versionar)
+# ThirdParty/*/Binaries/
+# ThirdParty/*/Intermediate/
+
+# Paquetes descargados o generados
+*.zip
+*.tar.gz
+*.rar
+*.7z
+
+
+# =============================================================================
+# 5. ARCHIVOS ESPECiFICOS DEL PLUGIN
+# =============================================================================
+
+# Archivos de cache del catalogo de assets (se regenera al escanear)
+# Si prefieres que el catalogo persista entre sesiones, comenta esta linea:
+Saved/ProceduralMapGenerator/
+
+# Archivos de preview o exportaciones de prueba del usuario
+Saved/ProceduralMapGenerator/Previews/
+Saved/ProceduralMapGenerator/Exports/
+
+# Configuraciones locales del plugin (per-user)
+Saved/Config/WindowsEditor/ProceduralMapGenerator*.ini
+
+
+# =============================================================================
+# 6. ASSETS GRANDES (Opcional - depende de tu estrategia)
+# =============================================================================
+# Si tus assets de ejemplo son muy grandes (>100MB) o son de un marketplace,
+# es mejor NO versionarlos. En su lugar, documenta que paquete de marketplace
+# se necesita. Descomenta las lineas de abajo si aplica:
+
+# Content/Environments/
+# Content/Megascans/
+# Content/StarterContent/
+# Content/ThirdParty/
+
+# Archivos de texturas/meshes muy grandes
+# *.uasset si son >100MB (considera Git LFS en su lugar)
+# *.umap si son >100MB
+
+
+# =============================================================================
+# 7. SEGURIDAD
+# =============================================================================
+
+# Nunca versionar claves API, tokens o credenciales
+*.key
+*.pem
+*.p12
+*.pfx
+secrets.ini
+config.ini
+.env
+
+
+# =============================================================================
+# 8. EXCEPCIONES (Lo que Si queremos versionar)
+# =============================================================================
+
+# Asegurar que los archivos fuente del plugin Si se versionen
+# (aunque esten dentro de carpetas que normalmente ignorariamos)
+!Source/**/*.cpp
+!Source/**/*.h
+!Source/**/*.cs
+
+# Configuracion base del plugin
+!Config/
+
+# Archivos de definicion del plugin
+!ProceduralMapGenerator.uplugin
+
+# Assets de ejemplo INTENCIONALES del plugin
+!Content/Templates/
+!Content/UI/
+!Content/Presets/
+
+# Documentacion
+!Docs/
+!README.md
+!LICENSE
+!CHANGELOG.md
+
+# Scripts de build o utilidades
+!Scripts/
+!*.sh
+!*.bat
+!*.ps1
